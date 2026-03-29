@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;MINECRAFT&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Import Minecraft font */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@import url('https://fonts.cdnfonts.com/css/minecraft');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>body, html {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>font-family: 'Minecraft', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background-color: #5c94fc;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Main Menu */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>#menu {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background: url('https://i.imgur.com/Kr2fQvH.png') no-repeat center center/cover; /* Minecraft background placeholder */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>#menu h1 {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>font-size: 5em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>margin-bottom: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text-shadow: 2px 2px 5px #000;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.button {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background-color: rgba(0,0,0,0.7);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>font-size: 1.5em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>padding: 15px 50px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>margin: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>border: 3px solid #fff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>transition: 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background-color: rgba(255,255,255,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Pages */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.page {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Floating texts */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.floating-text {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>font-size: 1.5em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text-shadow: 1px 1px 5px black;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>pointer-events: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Fade out */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>#fade {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background: black;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>transition: opacity 1.5s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>z-index: 10;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Main Menu --&gt;</p>
+<p class="p1">&lt;div id="menu"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;MINECRAFT&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="button" id="single"&gt;Reasonswhyiloveyou&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="button" id="multi"&gt;Thingsimexcitedtodowithyou&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="button" id="realms"&gt;I Love You&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="button" id="options"&gt;&lt;3&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="button" id="quit"&gt;Okay, Love You Bye&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Reasonswhyiloveyou Page --&gt;</p>
+<p class="p1">&lt;div id="page1" class="page" style="background: url('https://i.imgur.com/1xgZ4hG.jpg') no-repeat center center/cover;"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Thingsimexcitedtodowithyou Page --&gt;</p>
+<p class="p1">&lt;div id="page2" class="page" style="background: url('https://i.imgur.com/5mZf6bP.png') no-repeat center center/cover;"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- Fade --&gt;</p>
+<p class="p1">&lt;div id="fade"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// References</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const menu = document.getElementById('menu');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const page1 = document.getElementById('page1');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const page2 = document.getElementById('page2');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const fade = document.getElementById('fade');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const single = document.getElementById('single');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const multi = document.getElementById('multi');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const quit = document.getElementById('quit');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Floating text lists</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const reasons = [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"You are kind",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"You are thoughtful",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"You treat me so well",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"You are handsome",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"You are hardworking",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"You are caring",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"There are a million other reasons but I'll keep it short on here"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const excited = [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"Travel with you",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"Go hiking with you",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"Try new restaurants with you",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"Explore new places with you",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"Literally anything with you"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Function to create floating texts</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function createFloatingText(container, texts) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>texts.forEach(text =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const el = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>el.className = 'floating-text';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>el.textContent = text;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Random initial position</p>
+<p class="p1"><span class="Apple-converted-space">            </span>el.style.left = Math.random() * (window.innerWidth - 200) + 'px';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>el.style.top = Math.random() * (window.innerHeight - 50) + 'px';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Random velocity</p>
+<p class="p1"><span class="Apple-converted-space">            </span>el.vx = (Math.random() - 0.5) * 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>el.vy = (Math.random() - 0.5) * 2;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.appendChild(el);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function animate() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const children = container.getElementsByClassName('floating-text');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let c of children) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let left = parseFloat(c.style.left);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let top = parseFloat(c.style.top);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Bounce</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(left &lt; 0 || left &gt; window.innerWidth - 200) c.vx *= -1;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(top &lt; 0 || top &gt; window.innerHeight - 50) c.vy *= -1;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>c.style.left = left + c.vx + 'px';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>c.style.top = top + c.vy + 'px';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>requestAnimationFrame(animate);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>animate();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Button actions</p>
+<p class="p1"><span class="Apple-converted-space">    </span>single.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>menu.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>page1.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>createFloatingText(page1, reasons);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>multi.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>menu.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>page2.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>createFloatingText(page2, excited);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>quit.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>fade.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setTimeout(() =&gt; { fade.style.opacity = 1; }, 50);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// I Love You and &lt;3 do nothing</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
