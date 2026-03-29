@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>MINECRAFT</title>\
+    <link rel="stylesheet" href="style.css">\
+</head>\
+<body>\
+\
+    <div id="main-menu" class="screen active">\
+        <div class="logo">\
+            <h1 class="minecraft-title">MINECRAFT</h1>\
+        </div>\
+        \
+        <div class="menu-buttons">\
+            <button onclick="showScreen('reasons-screen', 'sunset')">Reasonswhyiloveyou</button>\
+            <button onclick="showScreen('future-screen', 'bubbles')">Thingsimexcitedtodowithyou</button>\
+            <button>I Love You</button>\
+            <div class="small-btn-row">\
+                <button class="half-btn">\\<3</button>\
+                <button class="half-btn" onclick="quitGame()">Okay, Love You Bye</button>\
+            </div>\
+        </div>\
+    </div>\
+\
+    <div id="reasons-screen" class="screen floating-screen">\
+        <button class="back-btn" onclick="showScreen('main-menu')">Back</button>\
+    </div>\
+\
+    <div id="future-screen" class="screen floating-screen">\
+        <button class="back-btn" onclick="showScreen('main-menu')">Back</button>\
+    </div>\
+\
+    <div id="fade-overlay"></div>\
+\
+    <script src="script.js"></script>\
+</body>\
+</html>}
