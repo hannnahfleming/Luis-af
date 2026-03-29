@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miffy Party!</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #FDFCEE;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        canvas {
+            background-color: white;
+            border: 4px solid black;
+            cursor: crosshair;
+        }
+        .counter {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-family: sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="counter" id="miffyCount">Miffys: 4</div>
+    <canvas id="miffyCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('miffyCanvas');
+        const ctx = canvas.getContext('2d');
+        const countDisplay = document.getElementById('miffyCount');
+
+        canvas.width = window.innerWidth * 0.9;
+        canvas.height = window.innerHeight * 0.9;
+
+        const BRUNA_COLORS = ["#FF5D3B", "#0072BC", "#FFCB05", "#00A651"];
+
+        class Miffy {
+            constructor(x, y, dx, dy, color, scale = 1) {
+                this.x = x;
+                this.y = y;
+                this.dx = dx;
+                this.dy = dy;
+                this.color = color;
+                this.scale = scale;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.scale(this.scale, this.scale);
+                
+                ctx.lineWidth = 4.5;
+                ctx.strokeStyle = "black";
+                ctx.lineCap = "round";
+                ctx.lineJoin = "round";
+
+                // 1. FEET
+                this.drawPaw(-18, 65);
+                this.drawPaw(18, 65);
+
+                // 2. BODY
+                ctx.beginPath();
+                ctx.moveTo(0, 0); 
+                ctx.lineTo(-40, 60); 
+                ctx.quadraticCurveTo(0, 75, 40, 60); 
+                ctx.lineTo(0, 0); 
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.stroke();
+
+                // 3. HANDS
+                this.drawPaw(-38, 50);
+                this.drawPaw(38, 50);
+
+                // 4. HEAD & EARS
+                ctx.beginPath();
+                ctx.moveTo(-38, -15);
+                ctx.quadraticCurveTo(-38, -50, -22, -50); 
+                
+                // LEFT EAR
+                ctx.lineTo(-22, -100);
+                ctx.quadraticCurveTo(-22, -112, -13, -112);
+                ctx.quadraticCurveTo(-4, -112, -4, -100);
+                ctx.lineTo(-4, -50); 
+                
+                // GAP
+                ctx.lineTo(4, -50); 
+                
+                // RIGHT EAR
+                ctx.lineTo(4, -100);
+                ctx.quadraticCurveTo(4, -112, 13, -112);
+                ctx.quadraticCurveTo(22, -112, 22, -100);
+                ctx.lineTo(22, -50); 
+                
+                ctx.quadraticCurveTo(38, -50, 38, -15);
+                ctx.quadraticCurveTo(38, 25, 0, 25);
+                ctx.quadraticCurveTo(-38, 25, -38, -15);
+                
+                ctx.fillStyle = "white";
+                ctx.fill();
+                ctx.stroke();
+
+                // 5. FACE
+                ctx.fillStyle = "black";
+                ctx.beginPath();
+                ctx.ellipse(-14, -2, 2.5, 4.5, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.ellipse(14, -2, 2.5, 4.5, 0, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.moveTo(-5, 8);
+                ctx.lineTo(5, 18);
+                ctx.moveTo(5, 8);
+                ctx.lineTo(-5, 18);
+                ctx.stroke();
+
+                ctx.restore();
+            }
+
+            drawPaw(x, y) {
+                ctx.save();
+                ctx.translate(x, y);
+                ctx.beginPath();
+                ctx.arc(0, 0, 8, 0, Math.PI * 2);
+                ctx.fillStyle = "white";
+                ctx.fill();
+                ctx.stroke();
+                ctx.restore();
+            }
+
+            update() {
+                if (this.x + (45 * this.scale) > canvas.width || this.x - (45 * this.scale) < 0) this.dx = -this.dx;
+                if (this.y + (80 * this.scale) > canvas.height || this.y - (115 * this.scale) < 0) this.dy = -this.dy;
+
+                this.x += this.dx;
+                this.y += this.dy;
+
+                this.draw();
+            }
+        }
+
+        let miffys = [];
+        let giantMiffy = null;
+
+        for (let i = 0; i < 4; i++) {
+            miffys.push(new Miffy(
+                150 + (i * 180), 
+                300, 
+                (Math.random() - 0.5) * 4, 
+                (Math.random() - 0.5) * 4, 
+                BRUNA_COLORS[i]
+            ));
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Check if we reached the limit
+            if (miffys.length >= 20) {
+                if (!giantMiffy) {
+                    // Create the giant Miffy in the center
+                    giantMiffy = new Miffy(canvas.width / 2, canvas.height / 2, 0.5, 0.5, "#FF5D3B", 4);
+                }
+                giantMiffy.update();
+                countDisplay.innerText = "BIG MIFFY ARRIVED!";
+                countDisplay.style.color = "#FF5D3B";
+            } else {
+                miffys.forEach(m => m.update());
+                countDisplay.innerText = "Miffys: " + miffys.length;
+                countDisplay.style.color = "black";
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        canvas.addEventListener('mousedown', (e) => {
+            if (miffys.length < 20) {
+                const rect = canvas.getBoundingClientRect();
+                miffys.push(new Miffy(
+                    e.clientX - rect.left,
+                    e.clientY - rect.top,
+                    (Math.random() - 0.5) * 6,
+                    (Math.random() - 0.5) * 6,
+                    BRUNA_COLORS[Math.floor(Math.random() * BRUNA_COLORS.length)]
+                ));
+            }
+        });
+
+        animate();
+    </script>
+</body>
+</html>
